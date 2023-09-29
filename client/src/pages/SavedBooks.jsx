@@ -55,13 +55,13 @@ const SavedBooks = () => {
   };
 
   // if data isn't here yet, say so
-  // if (!userDataLength) {
+  // if (!loading) {
   //   return <h2>LOADING...</h2>;
   // }
 
   return (
     <>
-      <div $fluid className="text-light bg-dark p-5">
+      <div fluid className="text-light bg-dark p-5">
         <Container>
           <h1>Viewing saved books!</h1>
         </Container>

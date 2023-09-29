@@ -54,7 +54,7 @@ const SearchBooks = () => {
         description: book.volumeInfo.description,
         image: book.volumeInfo.imageLinks?.thumbnail || '',
       }));
-
+console.log(bookData)
       setSearchedBooks(bookData);
       setSearchInput('');
     } catch (err) {
@@ -67,9 +67,9 @@ const SearchBooks = () => {
   const handleSaveBook = async (bookId) => {
     // find the book in `searchedBooks` state by the matching id
     const bookToSave = searchedBooks.find((book) => book.bookId === bookId);
-    
     // get token
     const token = Auth.loggedIn() ? Auth.getToken() : null;
+    console.log(token);
     if (!token) {
       return false;
     }
@@ -80,7 +80,7 @@ const SearchBooks = () => {
 
       setSavedBookIds([...savedBookIds, bookToSave.bookId]);
     } catch (err) {
-      console.error(error);
+      console.error(err);
     }
 
   };
